@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Car Badge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="badges.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.amd.js"></script>
 
 </head>
 <body>
-    
+    <nav>
+        <header><h1>Vehicle Indexer</h1></header>
+    </nav>
 <div class='badge'>
     <div class='innerBadge'>
         <div class='front'>
@@ -32,6 +36,22 @@
         </div>
     </div>
 </div>
+
+
+<script id="all-models" type="text/x-handlebars-template">
+{{#each allBadges}}
+    <div class='badge'>
+        <div class='innerBadge'>
+            <div class='front'>
+                <img src="{{badge}}" alt="">
+            </div>
+            <div class='back'>
+                <!-- <h2>{{make}}</h2> -->
+            </div>
+        </div>
+    </div>
+{{/each}}
+</script> 
 
     
 </body>
